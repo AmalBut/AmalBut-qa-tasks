@@ -7,5 +7,15 @@ module.exports = defineConfig({
     },
     baseUrl:"https://magento.softwaretestingboard.com",
     video:true,
+
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/myReport", // where to save in directory
+      overwrite: false,
+      html: true,
+      json: false,
+      timestamp: "mmddyyyy_HHMMss"
+    }
+
   },
 });

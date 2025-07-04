@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/AmalBut/AmalBut-qa-tasks#readme",
   "devDependencies": {
-    "cypress": "^14.4.1"
+    "cypress": "^14.4.1",
+    "mocha": "^11.7.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0"
   }
 }
