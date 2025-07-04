@@ -1,6 +1,6 @@
 /// <reference types = "cypress" />
 
-describe('', () => {
+describe('Add product to wishlist', () => {
     before(() => {
         const email = "CypressUser@gmail.com"
         const password = "test@123"
@@ -17,7 +17,7 @@ describe('', () => {
         cy.get('[role="alert"]')
           .should("be.visible")
           .and("contain","has been added to your Wish List. Click here to continue shopping.")
-          
+
         cy.url().should("include", "/wishlist/index/index")
         cy.get(".page-title").should("contain","My Wish List")
     });
