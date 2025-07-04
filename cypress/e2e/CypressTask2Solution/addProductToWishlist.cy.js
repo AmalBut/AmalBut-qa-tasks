@@ -11,6 +11,7 @@ describe('Add product to wishlist', () => {
         cy.get("#search").type("shirt {enter}")
         cy.get(".product-item-info").first().click()
         cy.get(".towishlist").click()
+        cy.wait(2000)
         cy.screenshot({capture:"fullPage"})
 
         //Assertions
