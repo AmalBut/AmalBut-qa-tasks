@@ -4,7 +4,7 @@ describe('', () => {
     before(() => {
         const email = "CypressUser@gmail.com"
         const password = "test@123"
-        cy.loginToMagento(email,password)
+        cy.loginToMagento(email,password)  //Custom command
         cy.get("#search").type("shirt {enter}")
         cy.contains(".product-item-info","Radiant Tee").click()
     })
