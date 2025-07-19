@@ -15,7 +15,7 @@ Then('Click on {string} option',(option)=>{
         cy.contains("[role=menuitem]","Watches").click();
         break;
     case "List":
-        cy.get("#mode-list").dblclick({force:true});
+        cy.get("#mode-list").dblclick();
         break;
     default:
         throw new Error("No selector defined for "+option)
@@ -25,14 +25,13 @@ Then('Click on {string} option',(option)=>{
 Then('Add watches with price greater than 55 to cart',()=>{
     cy.get(".product-item-details").then(($products)=>{
         for (let i = 0; i < $products.length; i++) {
-            cy.wrap($products[i]).find(".price").as('price')
-            cy.get('@price').invoke("text").then((price)=>{
+            cy.wait(500)
+            cy.wrap($products[i]).find(".price").invoke("text").then((price)=>{
                 const numericPart = price.replace("$", "");
                 if(parseInt(numericPart)>=55){
                     cy.wrap($products[i]).contains("Add to Cart").click();         
                 } 
             })
-                      
         }
     })
 })
