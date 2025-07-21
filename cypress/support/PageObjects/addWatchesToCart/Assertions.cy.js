@@ -1,28 +1,22 @@
 /// <reference types = "cypress" />
-import { Given, Then } from "cypress-cucumber-preprocessor/steps";
 
-Given('The user navigated to magento home page',()=>{
-    cy.visit("/");
-})
+class addWatchesToCartAssertions {
 
-Then('The user should Hover on Gear list',()=>{
-   cy.contains(".ui-menu-item","Gear").trigger("mouseover");
-})
-
-Then('Click on {string} option',(option)=>{
-   switch(option){
-    case "Watches":
-        cy.contains("[role=menuitem]","Watches").click();
+  clickOnOption(option) {
+    switch (option) {
+      case "Watches":
+        cy.contains("[role=menuitem]", "Watches").click();
         break;
-    case "List":
+      case "List":
         cy.get("#mode-list").dblclick();
         break;
-    default:
-        throw new Error("No selector defined for "+option)
-   }
-})
+      default:
+        throw new Error("No selector defined for " + option);
+    }
+    return this;
+  }
 
-Then('Add watches with price greater than 55 to cart',()=>{
+  addWatchesPriceGreaterThan55ToCart(){
     cy.get(".product-item-details").then(($products)=>{
         for (let i = 0; i < $products.length; i++) {
             cy.wait(500)
@@ -34,4 +28,8 @@ Then('Add watches with price greater than 55 to cart',()=>{
             })
         }
     })
-})
+    return this;
+  }
+
+}
+export default addWatchesToCartAssertions;
