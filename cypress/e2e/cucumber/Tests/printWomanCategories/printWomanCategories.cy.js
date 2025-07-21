@@ -21,17 +21,3 @@ Then(
   womanCategoriesAssert.printNewInWomanCategories();
   }
 );
-
-//Another way to print the categories all together
-
-/*Then(
-  "The user should print the categories in the New In Womens section",
-  () => {
-    cy.contains(".title", "New in women's")
-      .next()
-      .invoke("text")
-      .then((catName) => {
-        cy.log(catName);
-      });
-  }
-);*/
