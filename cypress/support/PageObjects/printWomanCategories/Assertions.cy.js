@@ -18,3 +18,15 @@ class womanCategoriesAssertions{
     }
 }
 export default womanCategoriesAssertions;
+
+//Another way to print the categories all together
+/*
+ printNewInWomanCategories(){
+ cy.contains(".title", "New in women's")
+      .next()
+      .invoke("text")
+      .then((catName) => {
+        cy.log(catName);
+      });
+}
+*/
