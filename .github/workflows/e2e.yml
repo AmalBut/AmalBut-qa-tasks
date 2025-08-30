@@ -26,7 +26,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y allure
 
       - name: Run Cypress with Allure
-        uses: cypress-io/github-actions@v6
+        uses: cypress-io/github-action@v6
         with:
           command: npx cypress run -s "cypress/e2e/cucumber/**/*.{feature,cy.js}" --env allure=true,allureResultsPath=allure-results
       
